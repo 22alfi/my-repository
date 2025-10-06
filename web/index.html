@@ -14,23 +14,21 @@
       justify-content: center;
       min-height: 100vh;
       overflow: hidden;
-      background: linear-gradient(120deg, #ff9a9e, #ffecd2);
-      animation: bgColor 12s infinite alternate;
+      background: #ff9a9e; /* Single static color */
       text-align: center;
       padding: 2rem;
-      transition: background 1s;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #ff4081;
+      color: #ffffff;
     }
 
     p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
-      color: #c2185b;
+      color: #ffffff;
     }
 
     .emoji-container {
@@ -44,13 +42,11 @@
       font-size: 3rem;
       cursor: pointer;
       animation: bounce 2s infinite;
-      transition: transform 0.3s, text-shadow 0.3s;
+      transition: transform 0.3s;
     }
 
-    /* Hover effect with glow and rotation */
     .emoji:hover {
       transform: scale(1.5) rotate(20deg);
-      text-shadow: 0 0 10px #ff4081, 0 0 20px #ff80ab;
     }
 
     @keyframes bounce {
@@ -65,20 +61,11 @@
       }
     }
 
-    @keyframes bgColor {
-      0% { background: linear-gradient(120deg, #ff9a9e, #ffecd2); }      /* pink → soft peach */
-      20% { background: linear-gradient(120deg, #fbc2eb, #a6c1ee); }     /* pink → purple → blue */
-      40% { background: linear-gradient(120deg, #fef9a7, #a1ffce); }     /* yellow → mint green */
-      60% { background: linear-gradient(120deg, #ffb347, #ffcc33); }     /* orange → yellow */
-      80% { background: linear-gradient(120deg, #84fab0, #8fd3f4); }     /* mint green → sky blue */
-      100% { background: linear-gradient(120deg, #ff9a9e, #ffecd2); }    /* back to pink → peach */
-    }
-
     footer {
       position: fixed;
       bottom: 1rem;
       font-size: 0.9rem;
-      color: #880e4f;
+      color: #ffffff;
     }
   </style>
 </head>
