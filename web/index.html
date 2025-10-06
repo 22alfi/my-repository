@@ -14,10 +14,11 @@
       justify-content: center;
       min-height: 100vh;
       overflow: hidden;
-      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
-      animation: bgColor 10s infinite alternate;
+      background: linear-gradient(120deg, #ff9a9e, #ffecd2);
+      animation: bgColor 12s infinite alternate;
       text-align: center;
       padding: 2rem;
+      transition: background 1s;
     }
 
     h1 {
@@ -43,11 +44,13 @@
       font-size: 3rem;
       cursor: pointer;
       animation: bounce 2s infinite;
-      transition: transform 0.3s;
+      transition: transform 0.3s, text-shadow 0.3s;
     }
 
+    /* Hover effect with glow and rotation */
     .emoji:hover {
       transform: scale(1.5) rotate(20deg);
+      text-shadow: 0 0 10px #ff4081, 0 0 20px #ff80ab;
     }
 
     @keyframes bounce {
@@ -63,11 +66,12 @@
     }
 
     @keyframes bgColor {
-      0% { background: linear-gradient(120deg, #ff9a9e, #fad0c4); }
-      25% { background: linear-gradient(120deg, #a18cd1, #fbc2eb); }
-      50% { background: linear-gradient(120deg, #f6d365, #fda085); }
-      75% { background: linear-gradient(120deg, #84fab0, #8fd3f4); }
-      100% { background: linear-gradient(120deg, #ff9a9e, #fad0c4); }
+      0% { background: linear-gradient(120deg, #ff9a9e, #ffecd2); }      /* pink → soft peach */
+      20% { background: linear-gradient(120deg, #fbc2eb, #a6c1ee); }     /* pink → purple → blue */
+      40% { background: linear-gradient(120deg, #fef9a7, #a1ffce); }     /* yellow → mint green */
+      60% { background: linear-gradient(120deg, #ffb347, #ffcc33); }     /* orange → yellow */
+      80% { background: linear-gradient(120deg, #84fab0, #8fd3f4); }     /* mint green → sky blue */
+      100% { background: linear-gradient(120deg, #ff9a9e, #ffecd2); }    /* back to pink → peach */
     }
 
     footer {
