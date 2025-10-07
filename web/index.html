@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #dbeafe, #93c5fd); /* Soft blue gradient */
-      color: #0f172a; /* Deep blue-gray text */
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -28,13 +28,13 @@
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #1e3a8a; /* Navy blue */
+      color: #2c3e50;
     }
 
     p {
       font-size: 1.3rem;
       margin-bottom: 2rem;
-      color: #334155; /* Muted blue-gray */
+      color: #555;
     }
 
     .buttons {
@@ -46,27 +46,25 @@
 
     .button {
       padding: 0.8rem 1.5rem;
-      background: #2563eb; /* Bright blue */
+      background: #3498db;
       color: white;
       border: none;
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
     }
 
     .button:hover {
-      background: #1d4ed8; /* Darker blue */
-      transform: translateY(-2px);
+      background: #2980b9;
     }
 
     footer {
       position: fixed;
       bottom: 1rem;
       font-size: 0.9rem;
-      color: #475569; /* Muted slate blue */
+      color: #888;
     }
 
     @media (max-width: 600px) {
@@ -78,7 +76,7 @@
       }
     }
 
-    /* ✨ Soft blue glass shine animation */
+    /* 🔥 Glass shine animation effect */
     body::before {
       content: "";
       position: fixed;
@@ -89,7 +87,7 @@
       background: linear-gradient(
         120deg,
         rgba(255, 255, 255, 0) 40%,
-        rgba(173, 216, 230, 0.4),
+        rgba(255, 255, 255, 0.35),
         rgba(255, 255, 255, 0) 60%
       );
       transform: rotate(0deg);
@@ -109,7 +107,7 @@
   </style>
 </head>
 <body>
-  <h1>Hi, I'm Alfida 💙</h1>
+  <h1>Hi, I'm Alfida 👋</h1>
   <p>How’s your day going? I hope something made you smile today! 😊</p>
 
   <div class="buttons">
