@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hi from Alfida</title>
+  <style>
+    /* Reset & basic setup */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffb3d9);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #c2185b;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #880e4f;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button {
+      padding: 0.8rem 1.5rem;
+      background: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: #ad1457;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1rem;
+      font-size: 0.9rem;
+      color: #880e4f;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* 🔥 Glass shine animation effect */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 40%,
+        rgba(255, 255, 255, 0.35),
+        rgba(255, 255, 255, 0) 60%
+      );
+      transform: rotate(0deg);
+      animation: shine 3s infinite;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    @keyframes shine {
+      0% {
+        transform: translate(-100%, -100%) rotate(25deg);
+      }
+      100% {
+        transform: translate(100%, 100%) rotate(25deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hi, I'm Alfida 👋</h1>
+  <p>How’s your day going? I hope something made you smile today! 😊</p>
+
+  <div class="buttons">
+    <a href="#" class="button">Bad 😕</a>
+    <a href="#" class="button">Good 🙂</a>
+    <a href="#" class="button">Excellent 😄</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Alfida. All rights reserved.
+  </footer>
+</body>
+</html>
