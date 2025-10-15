@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hi from Alfida</title>
+  <title>Hello from Alfida 🌸</title>
   <style>
-    /* Reset & basic setup */
+    /* 🌌 Reset & Layout */
     * {
       margin: 0;
       padding: 0;
@@ -13,111 +13,198 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #c084fc, #9333ea, #4c1d95);
+      color: #f3e8ff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      padding: 2rem;
+      overflow: visible; 
+      position: relative;
     }
 
+    /* 🌸 Navbar (unchanged) */
+    nav {
+      width: 100%;
+      background: rgba(168, 85, 247, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #f3e8ff;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #f3e8ff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f9a8d4;
+    }
+
+    /* ✨ Floating glow orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.4), rgba(255,255,255,0));
+      animation: float 8s infinite ease-in-out;
+      z-index: 0; /* keeps them behind everything */
+    }
+
+    .orb:nth-of-type(1) {
+      width: 250px;
+      height: 250px;
+      top: 25%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .orb:nth-of-type(2) {
+      width: 250px;
+      height: 250px;
+      bottom: 20%;
+      right: 10%;
+      animation-delay: 2s;
+    }
+
+    .orb:nth-of-type(3) {
+      width: 100px;
+      height: 100px;
+      top: 40%;
+      right: 25%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(-25px); opacity: 1; }
+    }
+
+    /* 🪻 Typography */
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #2c3e50;
+      background: linear-gradient(90deg, #f9a8d4, #c084fc, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 2s ease;
+      position: relative;
+      z-index: 10;
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      color: #ede9fe;
       margin-bottom: 2rem;
-      color: #555;
+      opacity: 0.9;
+      animation: fadeIn 2.5s ease;
+      position: relative;
+      z-index: 10;
     }
 
+    /* 🌷 Buttons */
     .buttons {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
+      animation: fadeIn 3s ease;
+      position: relative;
+      z-index: 10;
     }
 
     .button {
-      padding: 0.8rem 1.5rem;
-      background: #3498db;
+      padding: 0.9rem 1.8rem;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #a855f7, #7e22ce);
       color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
+      font-weight: 500;
       text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .button:hover {
-      background: #2980b9;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
     }
 
+    /* 🌙 Footer */
     footer {
       position: fixed;
       bottom: 1rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #d8b4fe;
+      opacity: 0.8;
+      z-index: 10;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      p {
-        font-size: 1.1rem;
-      }
+      nav ul { gap: 1rem; }
+      h1 { font-size: 2.2rem; }
+      p { font-size: 1rem; }
     }
 
-    /* 🔥 Glass shine animation effect */
-    body::before {
-      content: "";
-      position: fixed;
-      top: -100%;
-      left: -100%;
-      width: 300%;
-      height: 300%;
-      background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0) 40%,
-        rgba(255, 255, 255, 0.35),
-        rgba(255, 255, 255, 0) 60%
-      );
-      transform: rotate(0deg);
-      animation: shine 3s infinite;
-      z-index: 999;
-      pointer-events: none;
-    }
-
-    @keyframes shine {
-      0% {
-        transform: translate(-100%, -100%) rotate(25deg);
-      }
-      100% {
-        transform: translate(100%, 100%) rotate(25deg);
-      }
+    @media (max-width: 480px) {
+      nav { flex-direction: column; gap: 0.5rem; }
+      h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
-  <h1>Hi, I'm Alfida 👋</h1>
-  <p>How’s your day going? I hope something made you smile today! 😊</p>
+  <nav>
+    <a href="#" class="logo">Alfida 🌸</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services"> My Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✨ Floating glow orbs for dreamy aesthetic -->
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+
+  <h1>Hello, I'm Alfida 🌸</h1>
+  <p>Just a little purple magic to make your day softer 💜</p>
 
   <div class="buttons">
-    <a href="#" class="button">Bad 😕</a>
-    <a href="#" class="button">Good 🙂</a>
-    <a href="#" class="button">Excellent 😄</a>
+    <a href="#" class="button">Chill 😌</a>
+    <a href="#" class="button">Motivated 💪</a>
+    <a href="#" class="button">Sleepy 😴</a>
   </div>
 
-  <footer>
-    &copy; 2025 Alfida. All rights reserved.
-  </footer>
+  <footer>Made with 💜 by Alfida — 2025</footer>
 </body>
 </html>
+
