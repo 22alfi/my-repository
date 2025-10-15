@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Alfida 🌸</title>
+  <style>
+    /* 🌌 Reset & Layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #c084fc, #9333ea, #4c1d95);
+      color: #f3e8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+      padding-top: 50px;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      color: #f3e8ff;
+      font-weight: 500;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 20;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .home-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    /* ✨ Floating glow orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.4), rgba(255,255,255,0));
+      animation: float 8s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    .orb:nth-of-type(1) {
+      width: 250px;
+      height: 250px;
+      top: 15%;
+      left: 5%;
+    }
+
+    .orb:nth-of-type(2) {
+      width: 200px;
+      height: 200px;
+      bottom: 10%;
+      right: 15%;
+      animation-delay: 3s;
+    }
+
+    .orb:nth-of-type(3) {
+      width: 120px;
+      height: 120px;
+      top: 50%;
+      right: 20%;
+      animation-delay: 5s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(-25px); opacity: 1; }
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #f9a8d4, #c084fc, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeIn 2s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ede9fe;
+      margin: 1rem 0 2rem;
+      opacity: 0.9;
+      animation: fadeIn 2.5s ease;
+      position: relative;
+      z-index: 10;
+      max-width: 700px;
+    }
+
+    .about-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 10;
+      margin-top: 2rem;
+    }
+
+    .about-container img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #f9a8d4;
+      animation: floatImage 4s infinite ease-in-out alternate;
+    }
+
+    @keyframes floatImage {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+
+    .about-text {
+      max-width: 500px;
+      text-align: left;
+    }
+
+    /* 🌷 Buttons Section */
+    .button-section {
+      margin-top: 3rem;
+      margin-bottom: 4rem;
+      display: flex;
+      gap: 8.5rem; /* you chose this */
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 10;
+      position: relative;
+    }
+
+    .aesthetic-btn {
+      padding: 0.8rem 1.8rem;
+      background: linear-gradient(90deg, #a78bfa, #c084fc, #f9a8d4);
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .aesthetic-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    /* 🌸 Hidden Cards */
+    .info-card {
+      display: none;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 700px;
+      color: #fff;
+      margin-top: 2rem;
+      animation: fadeIn 0.8s ease forwards;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .info-card h2 {
+      background: linear-gradient(90deg, #f9a8d4, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1rem;
+      font-size: 0.9rem;
+      color: #d8b4fe;
+      opacity: 0.8;
+      z-index: 10;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .about-container { flex-direction: column; gap: 1.5rem; }
+      .about-text { text-align: center; }
+      .button-section { gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-button">← Home</a>
+
+  <!-- ✨ Floating glow orbs -->
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+
+  <h1>About Me 🌸</h1>
+
+  <div class="about-container">
+    <img src="images/alfida.jpg" alt="Alfida's Profile">
+    <div class="about-text">
+      <p>Hello! I'm Alfida, a dreamer with a love for soft purple vibes and small magical moments. I enjoy exploring technology, creativity, and making things look aesthetic and pleasant. When I'm not coding or designing, I like to relax, read, and add a touch of color to the world around me.</p>
+      <p>My goal is to blend functionality with beauty, bringing a calm, uplifting energy to everything I do. 🌸</p>
+    </div>
+  </div>
+
+  <!-- 🌷 Buttons Section -->
+  <div class="button-section">
+    <button class="aesthetic-btn" onclick="showCard('experience')">Experience</button>
+    <button class="aesthetic-btn" onclick="showCard('projects')">Projects</button>
+    <button class="aesthetic-btn" onclick="showCard('certificates')">Certificates</button>
+  </div>
+
+  <!-- 🌸 Hidden Cards -->
+  <div id="experience" class="info-card">
+    <h2>My Experience 💼</h2>
+    <p>💜 Full Stack Developer Intern – ICT Academy of Kerala — Developed a full-stack web application and learned teamwork, version control, and project delivery.</p>
+    <p>💜 Python Intern – Keltron, Thiruvananthapuram — Completed hands-on Python training and built small projects to strengthen coding and logic skills.</p>
+    <p>💜 Graphic Design Intern (Remote) – Webloomyou, Sharjah, UAE — Completed hands-on Python training and built small projects to strengthen coding and logic skills.</p>
+
+
+  </div>
+
+  <div id="projects" class="info-card">
+    <h2>My Projects 🪄</h2>
+    <p>✨ AgroTech – Web Application
+Developed a web app to help farmers access agriculture-related information easily.
+Designed the frontend using React.js with a clean and responsive layout.
+Worked on wireframes and user interface design for better usability.</p>
+      </div>
+
+  <div id="certificates" class="info-card">
+    <h2>My Certificates 📜</h2>
+    <p>🌸 Internship Certifications – Python, MERN Stack, and Graphic Design.</p>
+    <p>🌸 AWS Skill Builder – Completed foundational cloud training.</p>
+    <p>🌸 NSS Certificate – Recognized for community service and teamwork..</p>
+  </div>
+
+  <footer>Made with 💜 by Alfida — 2025</footer>
+
+  <script>
+    function showCard(id) {
+      // Hide all cards first
+      document.querySelectorAll('.info-card').forEach(card => card.style.display = 'none');
+
+      // Show the selected card
+      const selectedCard = document.getElementById(id);
+      selectedCard.style.display = 'block';
+
+      // Smooth scroll to it
+      selectedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+</body>
+</html>
