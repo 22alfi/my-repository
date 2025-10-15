@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Skills 🌸</title>
+  <style>
+    /* 🌌 Reset & Layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #c084fc, #9333ea, #4c1d95);
+      color: #f3e8ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(90deg, #f9a8d4, #c084fc, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      z-index: 10;
+      position: relative;
+    }
+/* 🌟 Home Button with Arrow */
+.home-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  color: #f3e8ff;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 20;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.home-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+
+    /* ✨ Floating Orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.4), rgba(255,255,255,0));
+      animation: float 10s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    .orb:nth-of-type(1) { width: 200px; height: 200px; top: 10%; left: 5%; animation-delay: 0s; }
+    .orb:nth-of-type(2) { width: 120px; height: 120px; top: 50%; right: 15%; animation-delay: 2s; }
+    .orb:nth-of-type(3) { width: 250px; height: 250px; bottom: 15%; left: 20%; animation-delay: 4s; }
+    #.orb:nth-of-type(4) { width: 80px; height: 80px; top: 70%; right: 5%; animation-delay: 1s; }
+    .orb:nth-of-type(5) { width: 150px; height: 150px; bottom: 30%; right: 25%; animation-delay: 3s; }
+    .orb:nth-of-type(6) { width: 100px; height: 100px; top: 20%; right: 35%; animation-delay: 5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.7; }
+      25% { transform: translateY(-20px) translateX(10px); opacity: 0.9; }
+      50% { transform: translateY(-30px) translateX(-10px); opacity: 1; }
+      75% { transform: translateY(-20px) translateX(5px); opacity: 0.9; }
+    }
+
+    /* 🌸 Skill Cards Container */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* ✨ Individual Card */
+    .skill-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 40px rgba(255,255,255,0.2);
+    }
+
+    .skill-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #f9a8d4, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .skill-card p {
+      font-size: 1rem;
+      color: #e0d7f5;
+      margin-bottom: 1rem;
+    }
+
+    .progress-bar {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+      height: 12px;
+    }
+
+    .progress {
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #a855f7, #7e22ce);
+      width: 0%;
+      animation: fillProgress 1.5s forwards;
+    }
+
+    @keyframes fillProgress {
+      from { width: 0%; }
+      to { width: var(--width); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .skill-card h3 { font-size: 1.2rem; }
+      .skill-card p { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-button">
+  ← Home
+</a>
+  <!-- ✨ Floating orbs -->
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+
+  <h1>My Skills 🌸</h1>
+
+  <div class="skills-container">
+    <div class="skill-card">
+      <h3>HTML & CSS</h3>
+      <p>Building responsive and aesthetic web pages.</p>
+      <div class="progress-bar">
+        <div class="progress" style="--width: 90%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>linux</h3>
+      <p>Comfortable with commands, server management, and troubleshooting.</p>
+      <div class="progress-bar">
+        <div class="progress" style="--width: 80%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>AWS</h3>
+      <p>Basic cloud deployment and management experience.</p>
+      <div class="progress-bar">
+        <div class="progress" style="--width: 75%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Python</h3>
+      <p>Beginner-level programming, learning to automate tasks.</p>
+      <div class="progress-bar">
+        <div class="progress" style="--width: 65%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>Docker</h3>
+      <p>Skilled in creating and managing containers and Docker images.</p>
+      <div class="progress-bar">
+        <div class="progress" style="--width: 85%;"></div>
+      </div>
+    </div>
+    
+    <div class="skill-card">
+      <h3>Git & GitHub</h3>
+      <p>Version control and repository management.</p>
+      <div class="progress-bar">
+        <div class="progress" style="--width: 86%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h3>UI(figma)</h3>
+      <p>Capable of designing user interfaces,using figma.</p>
+      <div class="progress-bar">
+        <div class="progress" style="--width: 86%;"></div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+</html>
